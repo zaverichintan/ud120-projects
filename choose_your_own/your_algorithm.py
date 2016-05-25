@@ -33,9 +33,28 @@ plt.show()
 
 
 
+#from sklearn.cross_validation import cross_val_score
+#from sklearn.ensemble import AdaBoostClassifier
+from sklearn.metrics import accuracy_score
+
+from sklearn.ensemble import RandomForestClassifier
+
+clf = RandomForestClassifier(n_estimators=10000)
+
+#clf.fit(features_train, labels_train)
 
 
+#clf = AdaBoostClassifier(n_estimators=10)
 
+clf.fit(features_train, labels_train)
+
+
+pred = clf.predict(features_test)
+
+acc = accuracy_score(pred, labels_test)
+
+
+print acc
 
 
 try:

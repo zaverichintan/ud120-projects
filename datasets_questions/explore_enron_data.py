@@ -19,4 +19,18 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+counter = 0
+for person in enron_data:
+    if (enron_data[person]["total_stock_value"]=='NaN'):
+        counter = counter + 1
 
+print counter
+
+maxi = 0
+for person in enron_data:
+    if (enron_data[person]["salary"] != 'NaN'  and enron_data[person]["salary"] != 26704229 and enron_data[person]["salary"] > maxi ):
+        maxi = enron_data[person]["salary"]
+
+print maxi
+
+print    enron_data

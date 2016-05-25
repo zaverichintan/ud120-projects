@@ -12,9 +12,13 @@ def outlierCleaner(predictions, ages, net_worths):
     """
     
     cleaned_data = []
-
+    counter = 0
+    for pred in predictions:
+        if (pred > 147):
+            counter = counter + 1
+            cleaned_data.append((ages, net_worths, (pred - net_worths)))
     ### your code goes here
-
+    print counter
     
     return cleaned_data
 
